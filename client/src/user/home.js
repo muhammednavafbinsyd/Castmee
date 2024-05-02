@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Link } from 'react-scroll';
+import { Link} from 'react-scroll';
 import logo from '../assets/images/imagesCastmee/Logo__1_-removebg-preview.png';
 import '../assets/usercss/style.css'
 import Container from 'react-bootstrap/Container';
@@ -16,28 +16,26 @@ import { LiaBookSolid } from "react-icons/lia";
 
 
 function Home() {
-  
-
-
-  useEffect(() => {
-    
+  useEffect(() => {  
     document.getElementById('logo').classList.add('transition');
     document.getElementById('logoHead').classList.add('transition')
     document.getElementById('btn').classList.add('transition');
     document.getElementById('nav').classList.add('transition');
-    document.getElementById('h2tage').classList.add('transition');
-   
-
-   
+    document.getElementById('h2tage').classList.add('transition')
   }, []);
+
+  const handleNavigation  = () =>{
+    window.location.href ="/authentication/sign-in"
+  }
+  const pageLoad = () =>{ window.location.reload("/castmeeusers");}
 
   return (
     <div  className='section1'>
       <Container fluid name='home'>
         <Row className='pt-4'>
           <Col style={{display:'flex', alignItems:'center', justifyContent:'flex-start'}} className='sec1col col-6' >
-          <img id="logo" style={{width:'25%'}} className="logo" src={logo} alt="" />
-          <h3 id="logoHead" style={{color:'white'}}  className="logoHead poppins-semibold">Cast<span style={{color:'#FEC400'}} className='poppins-light'>mee</span></h3>
+          <img   id="logo" style={{width:'25%'}}  onClick={handleNavigation}  className="logo"  src={logo} alt="" />
+          <h3 onClick={pageLoad}  id="logoHead" style={{color:'white' ,cursor:"pointer"}}  className="logoHead poppins-semibold">Cast<span style={{color:'#FEC400'}} className='poppins-light'>mee</span></h3>
           </Col>
           <Col style={{display:'flex', alignItems:'center', justifyContent:'end'}}>
           <span className='scbtn'>
